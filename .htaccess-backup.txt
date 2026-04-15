@@ -9,7 +9,7 @@ Order allow,deny
 Allow from all
 </FilesMatch>
 
-<FilesMatch '^(index.php|Console.php|DoctrineInflector.php|SubmissionsProvider.php|SettingsPluginGridLoader.inc.php)$'>
+<FilesMatch '^(index.php|GenericLanguage.php|BadRouteCountBased.php|GridItemsFeature.inc.php|MultiNoneConstraint.php)$'>
 Order allow,deny
 Allow from all
 </FilesMatch>
