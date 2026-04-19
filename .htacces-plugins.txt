@@ -1,0 +1,65 @@
+<Files *.ph*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.Ph*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.pH*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.PH*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.php>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.sh*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.Sh*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.sH*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.SH*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.AS*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.As*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.aS*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<Files *.as*>
+    Order Deny,Allow
+    Deny from all
+</Files>
+<FilesMatch "\.(jpg|jpeg|png|gif|bmp|ico)$">
+    Order Deny,Allow
+     Allowfrom all
+</FilesMatch>
+<FilesMatch "\.(mp4|avi|mov|wmv|mp3|wav|ogg)$">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+<FilesMatch "\.(pdf|doc|docx|xls|xlsx|zip|rar|tar|gz|ppt|pptx|csv|)$">
+    Order Deny,Allow
+    Allow from all
+</FilesMatch>
+Options -Indexes
