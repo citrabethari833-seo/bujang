@@ -1,0 +1,132 @@
+<?php
+// =========================================================
+// PENGATURAN KEAMANAN DAN KATA SANDI
+// =========================================================
+// !!! GANTI kata sandi di bawah dengan kata sandi yang rumit dan unik milik Anda !!!
+$custom_password = '$4pul1d!'; 
+$password_key    = '$4pul1d!'; // Parameter URL yang harus diisi (misalnya: ?kunci=...)
+
+// Periksa apakah pengguna telah memasukkan kata sandi yang benar
+if ( ! isset($_GET[$password_key]) || $_GET[$password_key] !== $custom_password ) {
+    // Jika kata sandi tidak cocok atau tidak ada, tampilkan form login
+    
+    // Header status 403 Forbidden
+    header('HTTP/1.0 403 Forbidden');
+    
+    echo "<h1>Akses Ditolak.</h1>";
+    echo "<p>Anda perlu memasukkan kata sandi yang benar untuk menjalankan scanner ini.</p>";
+    
+    // Form login sederhana
+    echo '<form method="GET" action="">';
+    echo 'Kata Sandi: <input type="password" name="' . htmlspecialchars($password_key) . '">';
+    echo '<input type="submit" value="Masuk">';
+    echo '</form>';
+    
+    // Kode berhenti di sini
+    die(); 
+}
+
+// =========================================================
+// SISANYA ADALAH LOGIKA SCANNER (DIPASTIKAN AMAN)
+// =========================================================
+
+// File ini tidak memerlukan integrasi WordPress, sehingga baris ini dihilangkan:
+// require_once( 'wp-load.php' ); 
+
+$scan_directory = __DIR__; // Memindai direktori tempat script ini berada
+$log_file       = 'scan_log.txt';
+$suspicious_patterns = array(
+    'base64_decode',
+    'eval(',
+    'exec(',
+    'system(',
+    'shell_exec',
+    'passthru',
+    'gzinflate',
+    'str_rot13',
+    'proc_open',
+    'create_function',
+    'HTTP_USER_AGENT',
+    'HTTP_REFERER',
+    'file_get_contents',
+    'REMOTE_ADDR',
+);
+
+$exclude_folders = array(
+    '.git',
+    '.svn',
+    'cache',
+    'vendor',
+    'node_modules',
+);
+
+$malicious_files_found = 0;
+// Pastikan file log dapat ditulis
+$log_handle = @fopen($log_file, 'w'); 
+
+if ($log_handle === false) {
+    echo "<h1>ERROR</h1><p>Gagal membuka file log '{$log_file}'. Periksa izin file (permissions).</p>";
+    die();
+}
+
+// FUNGSI PEMINDAIAN REKURSIF
+function scan_files($dir, $patterns, $exclude) {
+    global $malicious_files_found, $log_handle;
+
+    $items = array_diff(scandir($dir), array('.', '..'));
+    foreach ($items as $item) {
+        $path = $dir . '/' . $item;
+
+        if (in_array($item, $exclude)) {
+            continue;
+        }
+
+        if (is_dir($path)) {
+            scan_files($path, $patterns, $exclude);
+        } else if (is_file($path) && (pathinfo($path, PATHINFO_EXTENSION) == 'php')) {
+            $content = @file_get_contents($path);
+            if ($content === false) continue; // Skip jika tidak bisa baca
+            
+            $found_in_file = false;
+
+            foreach ($patterns as $pattern) {
+                if (strpos($content, $pattern) !== false) {
+                    $message = "[MALICIOUS FOUND] {$path} | Pattern: {$pattern}\n";
+                    fwrite($log_handle, $message);
+                    if (!$found_in_file) {
+                        echo "<p style='color:red;'>[!] Ditemukan: " . htmlspecialchars($path) . " (Pola: " . htmlspecialchars($pattern) . ")</p>";
+                        $malicious_files_found++;
+                        $found_in_file = true;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// =========================================================
+// MULAI PEMINDAIAN
+// =========================================================
+echo "<h1>🛡️ Pemindaian File Dasar Dimulai...</h1>";
+echo "<p>Memindai direktori: " . htmlspecialchars($scan_directory) . "</p>";
+echo "<p>Pola yang dicari: " . implode(', ', $suspicious_patterns) . "</p>";
+echo "<hr>";
+
+// Jalankan pemindaian
+scan_files($scan_directory, $suspicious_patterns, $exclude_folders);
+
+// =========================================================
+// HASIL
+// =========================================================
+fclose($log_handle);
+
+echo "<hr>";
+echo "<h2>✅ Pemindaian Selesai.</h2>";
+
+if ($malicious_files_found > 0) {
+    echo "<p style='color:red; font-weight:bold;'>[!!!] Total File Mencurigakan Ditemukan: {$malicious_files_found}</p>";
+    echo "<p>Periksa file log: <strong>" . htmlspecialchars($log_file) . "</strong> untuk detail lebih lanjut.</p>";
+} else {
+    echo "<p style='color:green; font-weight:bold;'>[OK] Tidak ada pola mencurigakan yang ditemukan.</p>";
+}
+?>
