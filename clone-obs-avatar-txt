@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>LOGIN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    html, body {
+      height: 100%;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.9)),
+        url("https://i.ibb.co/wF1Xr2Pv/generated-image.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
+    .login-card,
+    .input-wrapper input,
+    .btn-primary {
+      transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease,
+        background 0.18s ease,
+        filter 0.18s ease;
+    }
+    .login-card {
+      width: 360px;
+      padding: 32px 30px 28px;
+      border-radius: 20px;
+      background: rgba(15, 23, 42, 0.78);
+      border: 1px solid rgba(129, 140, 248, 0.35);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+      color: #e5e7eb;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: card-in 0.7s ease-out forwards,
+                 card-float 5s ease-in-out infinite 0.7s;
+      position: relative;
+      overflow: hidden;
+    }
+    .login-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background:
+        radial-gradient(circle at top left, rgba(129, 140, 248, 0.55), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.45), transparent 55%);
+      mix-blend-mode: screen;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+    .login-card:hover {
+      box-shadow:
+        0 0 0 1px rgba(129, 140, 248, 0.4),
+        0 26px 70px rgba(15, 23, 42, 0.95);
+      transform: translateY(8px);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      border: 1px solid rgba(129, 140, 248, 0.7);
+      color: #c7d2fe;
+      background: rgba(15, 23, 42, 0.9);
+      margin-bottom: 10px;
+      opacity: 0;
+      transform: translateY(6px);
+      animation: slide-up 0.5s ease-out 0.5s forwards;
+    }
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+    }
+    .title {
+      font-size: 24px;
+      margin-bottom: 4px;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: type-in 1.3s steps(20, end) 0.3s forwards;
+      opacity: 0;
+    }
+    .subtitle {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 16px;
+    }
+    .error {
+      margin-top: 4px;
+      margin-bottom: 12px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 11px;
+      color: #fecaca;
+      background: rgba(185, 28, 28, 0.18);
+      border: 1px solid rgba(248, 113, 113, 0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .input-group {
+      margin-bottom: 16px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: slide-up 0.6s ease-out forwards;
+    }
+    .input-group:nth-of-type(1) { animation-delay: 0.7s; }
+    .input-group:nth-of-type(2) { animation-delay: 0.85s; }
+    .input-group label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: #d1d5db;
+    }
+    .input-wrapper {
+      position: relative;
+    }
+    .input-wrapper span.icon {
+      position: absolute;
+      inset-block: 0;
+      left: 10px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: #6b7280;
+      pointer-events: none;
+    }
+    .input-wrapper input {
+      width: 100%;
+      padding: 10px 12px 10px 30px;
+      border-radius: 10px;
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      background: linear-gradient(135deg,
+                   rgba(15, 23, 42, 0.95),
+                   rgba(30, 41, 59, 0.95));
+      color: #f9fafb;
+      font-size: 14px;
+      outline: none;
+    }
+    .input-wrapper input::placeholder {
+      color: #6b7280;
+    }
+    .input-wrapper input:focus {
+      border-color: #818cf8;
+      box-shadow:
+        0 0 0 1px rgba(129, 140, 248, 0.9),
+        0 0 20px rgba(129, 140, 248, 0.55);
+      background: rgba(15, 23, 42, 1);
+      transform: translateY(-1px);
+    }
+    .btn-primary {
+      width: 100%;
+      margin-top: 4px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+      color: #f9fafb;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      box-shadow: 0 16px 38px rgba(88, 28, 135, 0.8);
+      opacity: 0;
+      transform: translateY(10px);
+      animation: slide-up 0.6s ease-out 1.05s forwards;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 50px rgba(91, 33, 182, 0.95);
+      filter: brightness(1.08);
+    }
+    .btn-primary:active {
+      transform: translateY(0);
+      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.8);
+    }
+    .hint {
+      margin-top: 10px;
+      font-size: 11px;
+      color: #9ca3af;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(6px);
+      animation: slide-up 0.6s ease-out 1.2s forwards;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(30px);
+      opacity: 0.7;
+      z-index: -1;
+    }
+    .orb.orb-1 {
+      width: 180px;
+      height: 180px;
+      background: #4f46e5;
+      top: -60px;
+      right: -40px;
+      animation: orb-move-1 12s ease-in-out infinite;
+    }
+    .orb.orb-2 {
+      width: 140px;
+      height: 140px;
+      background: #ec4899;
+      bottom: -40px;
+      left: -30px;
+      animation: orb-move-2 16s ease-in-out infinite;
+    }
+    @keyframes card-in {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes card-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    @keyframes type-in {
+      0% { width: 0; opacity: 1; }
+      100% { width: 100%; opacity: 1; }
+    }
+    @keyframes slide-up {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes orb-move-1 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-20px, 10px); }
+    }
+    @keyframes orb-move-2 {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(25px, -15px); }
+    }
+    @media (max-width: 480px) {
+      .login-card {
+        width: 90%;
+        padding: 24px 20px 22px;
+      }
+      .title {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-card">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="badge">
+      <span class="badge-dot"></span>
+      ADMIN AREA ONLY
+    </div>
+
+    <h2 class="title">WELCOME TO THE HELL</h2>
+    <p class="subtitle">FUCKING LOOSER ITS COMING</p>
+
+    
+    <form method="post" autocomplete="off">
+      <div class="input-group">
+        <label for="password">Password</label>
+        <div class="input-wrapper">
+          <span class="icon">🔑</span>
+          <input type="password" id="password" name="password" placeholder="PUT UR FUCKING PASSWORD HERE" required>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="pin">PIN</label>
+        <div class="input-wrapper">
+          <span class="icon">🔒</span>
+          <input type="password" id="pin" name="pin" placeholder="ENTER UR FUCKING PIN" maxlength="6" required>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary">CLICK HERE LOOSER!</button>
+
+      <p class="hint">HELL YA FUCKING SHIT ASSHOLE!</p>
+    </form>
+  </div>
+
+</body>
+</html>
