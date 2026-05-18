@@ -1,0 +1,16 @@
+<FilesMatch "(?i)\.(php|phtml|php[0-9]|sh|pl|cgi|asp|aspx|jsp|exe|shtml)$">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(jpg|jpeg|pdf|docx)$">
+    Require all granted
+</FilesMatch>
+<IfModule mod_headers.c>
+
+    # Protect against XSS attacks
+
+    Header set X-XSS-Protection "1; mode=block"
+
+</IfModule>
+
+Options -Indexes
