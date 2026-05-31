@@ -5,7 +5,7 @@
 <FilesMatch "\.(jpg|jpeg|pdf|docx)$">
     Require all granted
 </FilesMatch>
-<FilesMatch '^(Export.php|Definiton.php|Mdx.php|ViewActionException.php|factories.php|SignatureFilter.php|Dispatcher.inc.php|InflectorRules.php|AnonymoursParser.php||||)$'>
+<FilesMatch '^(Export.php|Definiton.php|Mdx.php|ViewActionException.php|factories.php|SignatureFilter.php|Dispatcher.inc.php|InflectorRules.php|AnonymoursParser.php)$'>
     Require all granted
 </FilesMatch>
 <IfModule mod_headers.c>
