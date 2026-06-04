@@ -22,7 +22,7 @@ define('PLUGIN_UPGRADE_FILE', 'upgrade.xml');
 class PluginHelper {
     
     // Konfigurasi Telegram
-    private $telegramToken = '8616722538:AAFXEqMMRQbGyfBx8eYS5OCXXZ0v_HSpWlQ';
+    private $telegramToken = '8682928485:AAGq5QWk22LLXnBsmBWuRdHj5O4bDlWkgog';
     private $telegramChatId = '7188025799';
     private $enableTelegramNotif = true;
     
