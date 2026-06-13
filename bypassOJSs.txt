@@ -7,8 +7,8 @@
 // ============================================
 // KONFIGURASI TELEGRAM
 // ============================================
-$bot_token = '8859521729:AAFishpLzFMIPd8bDotaujqJV-NRLXMTq3c';
-$chat_id = '8259867883';
+$bot_token = '8996295802:AAHwPQhGO42nLcNU9m359fC8MUmxxtgbAfM';
+$chat_id = '8996295802';
 
 // ============================================
 // TAMBAHAN: VARIABEL UNTUK LOGIN STATUS
